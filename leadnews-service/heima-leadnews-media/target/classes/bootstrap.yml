@@ -1,0 +1,19 @@
+
+server:
+  port: 9003
+  #数据源
+spring:
+  application:
+    name: leadnews-wemedia  # 服务名
+  cloud:
+    nacos:
+      discovery:  # 服务发现
+        server-addr: 192.168.64.131:8848
+      config:     # 服务配置管理
+        server-addr: 192.168.64.131:8848
+        file-extension: yml  # 匹配nacos的data-id的后缀名
+#要去nacos添加wenmedia.yml
+  servlet:
+    multipart:
+      max-file-size: 5MB  # 单个上传文件大小限制，默认为1MB
+      max-request-size: 25MB # 一次请求的所有文件的大小限制，默认10MB
